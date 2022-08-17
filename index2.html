@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <script>
+      function HandlerClick_Card(id) {
+        let visitas = document.getElementById(id);
+        visitas.innerText = parseInt(visitas.innerText) + 1;
+      }
+    </script>
     <title>Usuarios</title>
   </head>
   <body>
@@ -11,16 +18,44 @@
       <nav></nav>
     </header>
     <main>
-      <ul>
-        <li>
-          <div>
-            <div>
-              <img src="/img/Lee Gu.jpg" alt="Lee Gu" />
-            </div>
-            <div>
-              <h2>Lee Gu</h2>
-              <h3>@leegu</h3>
-            </div>
+      <ul class="users-list">
+        <li class="user-item">
+          <div class="card user-item__content">
+            <a href="#" onclick="HandlerClick_Card(1)">
+              <div class="user-item__image avatar">
+                <img src="/img/Lee Gu.jpg" alt="Lee Gu" />
+              </div>
+              <div class="user-item__info">
+                <h2>Lee Gu</h2>
+                <h3 id="1">0</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="user-item">
+          <div class="card user-item__content">
+            <a href="#" onclick="HandlerClick_Card(2)">
+              <div class="user-item__image avatar">
+                <img src="/img/Grady Archie.jpg" alt="Lee Gu" />
+              </div>
+              <div class="user-item__info">
+                <h2>Grady Archie</h2>
+                <h3 id="2">0</h3>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="user-item">
+          <div class="card user-item__content">
+            <a href="#" onclick="HandlerClick_Card(3)">
+              <div class="user-item__image avatar">
+                <img src="/img/Laura E Fernandez.jpg" alt="Lee Gu" />
+              </div>
+              <div class="user-item__info">
+                <h2>Laura Fernandez</h2>
+                <h3 id="3">0</h3>
+              </div>
+            </a>
           </div>
         </li>
       </ul>
