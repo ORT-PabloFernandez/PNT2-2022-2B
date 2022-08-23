@@ -7,8 +7,19 @@
     <link href="/css/styles.css" rel="stylesheet" />
     <script>
       function HandlerClick_Card(id) {
-        let visitas = document.getElementById(id);
-        visitas.innerText = parseInt(visitas.innerText) + 1;
+        // obtengo el li
+        let users = document.querySelectorAll("ul > li");
+        //console.log(users);
+        users.forEach(function (user) {
+          if (user.id == id) {
+            const visitas =
+              user.children[0].children[0].children[1].children[1];
+            visitas.innerHTML = parseInt(visitas.innerHTML) + 1;
+          }
+        });
+        // let userInfoVisitas =
+        //   card.children[0].children[0].children[1].children[1];
+        // userInfoVisitas.innerHTML = parseInt(userInfoVisitas.innerHTML) + 1;
       }
     </script>
     <title>Usuarios</title>
@@ -19,7 +30,7 @@
     </header>
     <main>
       <ul class="users-list">
-        <li class="user-item">
+        <li class="user-item" id="1">
           <div class="card user-item__content">
             <a href="#" onclick="HandlerClick_Card(1)">
               <div class="user-item__image avatar">
@@ -27,12 +38,12 @@
               </div>
               <div class="user-item__info">
                 <h2>Lee Gu</h2>
-                <h3 id="1">0</h3>
+                <h3>0</h3>
               </div>
             </a>
           </div>
         </li>
-        <li class="user-item">
+        <li class="user-item" id="2">
           <div class="card user-item__content">
             <a href="#" onclick="HandlerClick_Card(2)">
               <div class="user-item__image avatar">
@@ -40,12 +51,12 @@
               </div>
               <div class="user-item__info">
                 <h2>Grady Archie</h2>
-                <h3 id="2">0</h3>
+                <h3>0</h3>
               </div>
             </a>
           </div>
         </li>
-        <li class="user-item">
+        <li class="user-item" id="3">
           <div class="card user-item__content">
             <a href="#" onclick="HandlerClick_Card(3)">
               <div class="user-item__image avatar">
@@ -53,7 +64,7 @@
               </div>
               <div class="user-item__info">
                 <h2>Laura Fernandez</h2>
-                <h3 id="3">0</h3>
+                <h3>0</h3>
               </div>
             </a>
           </div>
